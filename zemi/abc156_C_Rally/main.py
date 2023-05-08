@@ -1,6 +1,3 @@
-N = int(input())
-
-X = list(map(int, input().split()))
 
 
 def calc_cost(X, p):
@@ -14,9 +11,11 @@ def calc_cost(X, p):
   return cost
 
 
+X = list(map(int, input().split()))
+n = int(input())
+
 start, end = min(X), max(X)
 # start, end = 1, 100
-
 ans = 10 ** 10
 
 for i in range(start, end+1):

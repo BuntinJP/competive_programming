@@ -1,8 +1,3 @@
-import sys
-from typing import List
-from itertools import combinations
-
-
 left, right = 0, 10**9+1
 
 N = int(input().strip())
@@ -12,7 +7,10 @@ A = [list(map(int, input().strip().split())) for _ in range(N)]
 def check(x: int) -> bool:
   S = set()
   for a in A:
-    bit = sum(1 << i for i in range(5) if a[i] >= x)
+    bit = 0
+    for i in range(5):
+      if a[i] >= x:
+        bit += 1 << i
     S.add(bit)
   for a in S:
     for b in S:
